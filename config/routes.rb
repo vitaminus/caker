@@ -1,4 +1,11 @@
 Caker::Application.routes.draw do
+
+  #resources :static_pages
+
+  get "static_pages/home"
+  get "static_pages/help"
+  get "static_pages/about"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
