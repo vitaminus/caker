@@ -1,5 +1,7 @@
 Caker::Application.routes.draw do
 
+  devise_for :users
+
   #resources :static_pages
 
   match '/help',    to: 'static_pages#help'
