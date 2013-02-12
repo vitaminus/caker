@@ -1,0 +1,8 @@
+- provide(:title, 'Добавить район')
+%h1 Добавить район
+.row-fluid
+  .span6.offset3
+    = form_for(@area) do |f|
+      = render 'fields', f: f
+      %br
+      = f.submit "Добавить район", class: "btn btn-large btn-wide"

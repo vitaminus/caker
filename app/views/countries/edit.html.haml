@@ -1,0 +1,8 @@
+- provide(:title, 'Изменить страну')
+%h1 Изменить страну
+.row-fluid
+  .span6.offset3
+    = form_for(@country) do |f|
+      = render 'fields', f: f
+      %br
+      = f.submit "Изменить страну", class: "btn btn-large btn-primary"

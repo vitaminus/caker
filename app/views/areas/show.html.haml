@@ -1,0 +1,8 @@
+- provide(:title, @area.title + " район - " + @area.city.title)
+%h1 Areas#show
+%h3 
+  = @area.title
+%h4
+  = @area.city.title
+%h5
+  = link_to @area.city.country.title, @area.city.country

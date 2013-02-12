@@ -1,0 +1,8 @@
+- provide(:title, 'Добавить страну')
+%h1 Добавить страну
+.row-fluid
+  .span6.offset3
+    = form_for(@country) do |f|
+      = render 'fields', f: f
+      %br
+      = f.submit "Добавить страну", class: "btn btn-large  btn-wide"

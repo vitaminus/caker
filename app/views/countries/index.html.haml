@@ -1,0 +1,10 @@
+- provide(:title, "Все страны")
+%h1 Все страны
+/= @country.title
+- @countries.each do |country|
+  %h4
+    = link_to country.title, country_path(country)
+  %p
+    /= raw truncate(country.content, :length => 500, :omission => "...")
+    /= link_to "Читать далее ...", country_path(country)
+  %hr
