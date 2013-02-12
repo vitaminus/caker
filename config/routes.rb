@@ -1,6 +1,10 @@
 Caker::Application.routes.draw do
 
-  devise_for :users
+  resources :countries
+  resources :cities
+  resources :areas
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout",
+                                  sign_up: "registration"}
 
   #resources :static_pages
 

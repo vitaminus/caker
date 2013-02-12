@@ -11,7 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130125164455) do
+ActiveRecord::Schema.define(:version => 20130209212614) do
+
+  create_table "areas", :force => true do |t|
+    t.integer  "country_id"
+    t.integer  "city_id"
+    t.string   "title"
+    t.string   "url_title"
+    t.string   "slug"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "cities", :force => true do |t|
+    t.integer  "country_id"
+    t.string   "title"
+    t.string   "url_title"
+    t.string   "slug"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "countries", :force => true do |t|
+    t.string   "title"
+    t.string   "url_title"
+    t.string   "slug"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -26,6 +53,10 @@ ActiveRecord::Schema.define(:version => 20130125164455) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "username"
+    t.integer  "country_id"
+    t.integer  "city_id"
+    t.integer  "area_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

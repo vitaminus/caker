@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic&subset=latin,cyrillic-ext);
 
 /* mixins, variables, etc. */
 
@@ -18,7 +19,7 @@ html {
 
 body {
   padding-top: 60px;
-  font-family: Ubuntu, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Lucida Grande", 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
   max-width: 1170px;
   margin: 0 auto;
@@ -209,6 +210,10 @@ input {
   height: auto !important;
 }
 
+input[type="submit"].btn-wide {
+  width: 100%;
+}
+
 #error_explanation {
   color: #f00;
   ul {
@@ -226,11 +231,15 @@ input {
   border-radius: 3px 3px 3px 3px;
   color: #555555;
   display: inline-block;
-  font-size: 18px;
-  height: 20px;
+  font-size: 20px;
+  height: 43px;
   line-height: 20px;
   margin-bottom: 9px;
   padding: 8px 6px;
+}
+
+label.inline {
+  display: inline-block;
 }
 
  /* users index */

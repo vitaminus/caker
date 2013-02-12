@@ -1,7 +1,16 @@
-.offset2
+- provide(:title, 'Регистрация')
+.span7.offset2
   %h2 Регистрация
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = devise_error_messages!
+    %div
+      = f.collection_select :country_id, Country.all, :id, :title, prompt: 'Выберите страну'
+    %div
+      = f.grouped_collection_select :city_id, Country.order(:title), :cities, :title, :id, :title, prompt: 'Выберите город'
+    %div
+      = f.grouped_collection_select :area_id, City.order(:title), :areas, :title, :id, :title, prompt: 'Выберите район'
+    %div
+      = f.text_field :username, placeholder: "Логин"
     %div
       /= f.label :email
       = f.email_field :email, autofocus: true, placeholder: "Email"
@@ -11,5 +20,6 @@
     %div
       /= f.label :password_confirmation, "Подтверждение пароля"
       = f.password_field :password_confirmation, placeholder: "Подтверждение пароля"
-    %div= f.submit "Регистрация", class: "btn btn-large"
+    %div
+      = f.submit "Регистрация", class: "btn btn-large btn-wide"
   = render "devise/shared/links"
