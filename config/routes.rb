@@ -1,5 +1,7 @@
 Caker::Application.routes.draw do
 
+  devise_for :admins
+
   resources :countries
   resources :cities
   resources :areas

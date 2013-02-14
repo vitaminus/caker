@@ -7,8 +7,23 @@
           %li= link_to "Главная", root_path
           %li= link_to "Помощь", help_path
           - if user_signed_in?
-            %li= link_to "Выйти", destroy_user_session_path, method: :delete, class: "login_logout"
-            %li= link_to current_user.username, edit_user_registration_path
+            - if current_user.admin?
+              %li#fat-menu.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  Админ
+                  %b.caret
+                %ul.dropdown-menu
+                  %li= link_to "Добавить страну", new_country_path
+                  %li= link_to "Добавить город", new_city_path
+                  %li= link_to "Добавить район", new_area_path
+                  /%li= link_to "Профиль", current_user
+                  %li= link_to "Внести изменения", edit_user_registration_path
+                  %li.divider
+                  %li
+                    = link_to "Выйти", destroy_user_session_path, method: :delete
+            - else
+              %li= link_to "Выйти", destroy_user_session_path, method: :delete, class: "login_logout"
+              %li= link_to current_user.username, edit_user_registration_path
           - else
             %li= link_to "Регистрация", new_user_registration_path, class: "registration"
             %li= link_to "Войти", new_user_session_path, class: "login_logout"

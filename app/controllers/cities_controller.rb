@@ -1,7 +1,8 @@
 # encoding: UTF-8
 class CitiesController < ApplicationController
   before_filter :authenticate_user!, except: [:show, :index]
-  before_filter :city_find, only: [:show, :edit, :update, :destroy]
+  before_filter :city_find,          only: [:show, :edit, :update, :destroy]
+  before_filter :admin_user,         except: [:show, :index]
 
   def index
     @cities = City.all
@@ -28,10 +29,18 @@ class CitiesController < ApplicationController
   end
 
   def update
-    
+    if @city.update_attributes(params[:city])
+      flash[:success] = "Изменения успешно сохранены!"
+      sign_in @city
+      redirect_to @city
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-    
+    @city.destroy
+    flash[:success] = "Страна успешно удалена"
+    redirect_to area_path
   end
 end

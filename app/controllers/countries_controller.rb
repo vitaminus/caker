@@ -1,7 +1,8 @@
 # encoding: UTF-8
 class CountriesController < ApplicationController
   before_filter :authenticate_user!, except: [:show, :index]
-  before_filter :country_find, only: [:show, :edit, :update, :destroy]
+  before_filter :country_find,       only: [:show, :edit, :update, :destroy]
+  before_filter :admin_user,         except: [:show, :index]
 
   def index
     @countries = Country.all
@@ -41,4 +42,5 @@ class CountriesController < ApplicationController
     flash[:success] = "Страна успешно удалена"
     redirect_to category_path
   end
+
 end

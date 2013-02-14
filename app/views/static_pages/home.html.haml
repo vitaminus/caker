@@ -8,3 +8,5 @@
     = current_user.email
   %p
     = current_user.current_sign_in_ip
+  -if current_user.admin?
+    Привет админ
