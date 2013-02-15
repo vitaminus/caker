@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   include CountriesHelper
   include CitiesHelper
   include AreasHelper
+  include ProfilesHelper
 
   protected
 

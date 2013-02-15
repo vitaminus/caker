@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.12'
 gem 'bootstrap-sass', '2.1'
 gem 'devise'
+gem 'rmagick'
+gem 'carrierwave'
 #gem 'twitter'
 
 

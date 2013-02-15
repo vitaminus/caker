@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
   belongs_to :country
   belongs_to :city
   belongs_to :area
+  has_one    :profile
+  mount_uploader :avatar, AvatarUploader
 
   validates :country_id, :city_id, :area_id, presence: true
   validates :username, presence: true, length: {minimum: 5, maximum: 25},

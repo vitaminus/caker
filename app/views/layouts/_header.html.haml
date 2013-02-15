@@ -23,7 +23,7 @@
                     = link_to "Выйти", destroy_user_session_path, method: :delete
             - else
               %li= link_to "Выйти", destroy_user_session_path, method: :delete, class: "login_logout"
-              %li= link_to current_user.username, edit_user_registration_path
+              %li= link_to current_user.username, new_profile_path
           - else
             %li= link_to "Регистрация", new_user_registration_path, class: "registration"
             %li= link_to "Войти", new_user_session_path, class: "login_logout"

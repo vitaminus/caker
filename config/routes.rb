@@ -1,10 +1,12 @@
 Caker::Application.routes.draw do
 
+  
   devise_for :admins
 
   resources :countries
   resources :cities
   resources :areas
+  resources :profiles
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout",
                                   sign_up: "registration"}
 

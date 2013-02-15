@@ -1,0 +1,6 @@
+= render 'shared/error_messages', object: f.object
+= f.text_field :name, placeholder: "Введите ваше имя"
+= f.text_field :phone1, placeholder: "Номер телефона"
+= f.text_field :phone2, placeholder: "Еще номер телефона"
+= image_tag(@profile.avatar.thumb.url) if @profile.avatar?
+= f.file_field :avatar

@@ -1,0 +1,8 @@
+- provide(:title, 'Профиль')
+%h1 Профиль
+.row-fluid
+  .span6.offset3
+    = form_for(@profile) do |f|
+      = render 'fields', f: f
+      %br
+      = f.submit "Сохранить профиль", class: "btn btn-large  btn-wide"

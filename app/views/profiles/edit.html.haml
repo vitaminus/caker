@@ -1,0 +1,8 @@
+- provide(:title, 'Изменить профиль')
+%h1 Изменить профиль
+.row-fluid
+  .span6.offset3
+    = form_for(@profile) do |f|
+      = render 'fields', f: f
+      %br
+      = f.submit "Изменить профиль", class: "btn btn-large btn-primary"
