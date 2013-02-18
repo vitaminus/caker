@@ -8,13 +8,14 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :username, :email, :password, :password_confirmation, 
-                  :remember_me, :country_id, :city_id, :area_id
+                  :remember_me, :country_id, :city_id, :area_id, :name,
+                  :phone1, :phone2, :avatar, :remove_avatar
   # attr_accessible :title, :body
 
   belongs_to :country
   belongs_to :city
   belongs_to :area
-  has_one    :profile
+  
   mount_uploader :avatar, AvatarUploader
 
   validates :country_id, :city_id, :area_id, presence: true
