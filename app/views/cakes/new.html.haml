@@ -1,0 +1,8 @@
+- provide(:title, 'Добавить торт')
+%h1 Добавить торт
+.row-fluid
+  .span6.offset3
+    = form_for(@cake) do |f|
+      = render 'fields', f: f
+      %br
+      = f.submit "Добавить торт", class: "btn btn-large btn-wide"

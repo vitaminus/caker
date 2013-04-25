@@ -16,6 +16,7 @@
                   %li= link_to "Добавить страну", new_country_path
                   %li= link_to "Добавить город", new_city_path
                   %li= link_to "Добавить район", new_area_path
+                  %li= link_to "Добавить категорию", new_category_path
                   /%li= link_to "Профиль", current_user
                   %li= link_to "Внести изменения", edit_user_registration_path
                   %li.divider
@@ -23,7 +24,7 @@
                     = link_to "Выйти", destroy_user_session_path, method: :delete
             - else
               %li= link_to "Выйти", destroy_user_session_path, method: :delete, class: "login_logout"
-              %li= link_to current_user.username, edit_user_registration_path
+              %li= link_to current_user.username, edit_user_registration_path, title: "Профиль пользователя"
           - else
-            %li= link_to "Регистрация", new_user_registration_path, class: "registration"
+            /%li= link_to "Регистрация", new_user_registration_path, class: "registration"
             %li= link_to "Войти", new_user_session_path, class: "login_logout"

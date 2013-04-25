@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   belongs_to :country
   belongs_to :city
   belongs_to :area
+  has_many   :cakes
+  has_many   :comments, as: :commentable
   
   mount_uploader :avatar, AvatarUploader
 

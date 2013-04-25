@@ -1,0 +1,8 @@
+- provide(:title, 'Добавить категорию')
+%h1 Добавить категорию
+.row-fluid
+  .span6.offset3
+    = form_for(@category) do |f|
+      = render 'fields', f: f
+      %br
+      = f.submit "Добавить категорию", class: "btn btn-large  btn-wide"

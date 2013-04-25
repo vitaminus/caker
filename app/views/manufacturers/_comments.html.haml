@@ -1,0 +1,20 @@
+%h2 Отзывы
+- if @manufacturer.comments.count != 0
+  - @manufacturer.comments.each do |comment|
+    .row-fluid
+      .span3
+        %p
+          %strong
+            = comment.commenter
+          %br
+          %small.muted
+            = comment.created_at.strftime("%d.%m.%Y в %k:%M:%S")
+      .span9
+        %p
+          = comment.body
+    %hr.comment
+    - if signed_in? && current_user.admin?
+      /= link_to "Удалить комментарий", [comment.manufacturer, comment],        confirm: "Вы уверены?", method: :delete, class: "pull-right"
+-else
+  .center
+    %p Еще нет ни одного отзыва. Будь первым!

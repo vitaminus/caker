@@ -1,5 +1,5 @@
 @import "bootstrap";
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic&subset=latin,cyrillic-ext);
+//@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic&subset=latin,cyrillic-ext);
 
 /* mixins, variables, etc. */
 
@@ -19,7 +19,7 @@ html {
 
 body {
   padding-top: 60px;
-  font-family: "Ubuntu", "Lucida Grande", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   font-size: 16px;
   max-width: 1170px;
   margin: 0 auto;
@@ -272,4 +272,7 @@ hr.comment {
   color: #f3f3f3;
   text-decoration: none;
   font-size: 1.3em;
+}
+small{
+  font-size: 60%;
 }

@@ -1,0 +1,14 @@
+- provide(:title, 'Все категории')
+%h1 Все категории
+.row-fluid
+  - @categories.each do |category|
+    %h4
+      = link_to category.title, category_path(category)
+    - if user_signed_in?
+      - if current_user.admin?
+        = link_to 'Изменить', edit_category_path(category)
+        = link_to 'Удалить', category, confirm: "Вы уверены?", method: :delete
+  - if user_signed_in?
+    - if current_user.admin?
+      %hr
+        = link_to 'Добавить категорию', new_category_path

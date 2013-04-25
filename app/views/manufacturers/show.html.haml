@@ -1,0 +1,37 @@
+- provide(:title, @manufacturer.country.title + " - " + @manufacturer.city.title + " - " + @manufacturer.area.title + " район - " + @manufacturer.username)
+%h1 
+  = @manufacturer.name? ? @manufacturer.name : @manufacturer.username 
+.row
+  .span3
+    = image_tag(@manufacturer.avatar.thumb.url) if @manufacturer.avatar?
+  .span7
+    %p 
+      Страна:
+      %b
+        =@manufacturer.country.title
+    %p 
+      Город:
+      %b
+        =@manufacturer.city.title
+    %p 
+      Район:
+      %b
+        =@manufacturer.area.title
+    %p 
+      -if @manufacturer.phone1?
+        Номер телефона:
+        %b
+          =@manufacturer.phone1
+    %p
+      -if @manufacturer.phone2?
+        Еще номер телефона:
+        %b
+          =@manufacturer.phone2?
+.row
+  .span12
+    Здесь будут фотографии тортов с ссылками на сами торты
+.row
+  .span6
+    = render 'comments'
+  .span6
+    Здесь будут отзывы о тортах данного производителя по убыванию

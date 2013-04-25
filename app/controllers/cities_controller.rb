@@ -31,7 +31,6 @@ class CitiesController < ApplicationController
   def update
     if @city.update_attributes(params[:city])
       flash[:success] = "Изменения успешно сохранены!"
-      sign_in @city
       redirect_to @city
     else
       render 'edit'

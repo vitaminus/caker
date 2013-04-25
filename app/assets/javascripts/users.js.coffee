@@ -4,6 +4,7 @@ jQuery ->
   $('#user_city_id').hide()
   $('#user_area_id').hide()
   $('#user_country_id').change ->
+    $('#user_area_id').hide()
     country = $('#user_country_id :selected').text()
     escaped_country = country.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
     options = $(cities).filter("optgroup[label='#{escaped_country}']").html()

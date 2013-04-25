@@ -1,2 +1,9 @@
-%h1 Cities#edit
-%p Find me in app/views/cities/edit.html.haml
+- provide(:title, 'Изменить город')
+%h1 Изменить город
+.row-fluid
+  .span6.offset3
+    = form_for(@city) do |f|
+      = render 'fields', f: f
+      %br
+      = f.submit "Сохранить изменения", class: "btn btn-large  btn-wide"
+      %br

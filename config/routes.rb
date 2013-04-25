@@ -1,12 +1,18 @@
 Caker::Application.routes.draw do
-
   
+  resources :manufacturers do
+    resources :comments
+  end
+  resources :cakes do
+    resources :comments
+  end
+  resources :categories
+
   devise_for :admins
 
   resources :countries
   resources :cities
   resources :areas
-  resources :profiles
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout",
                                   sign_up: "registration"}
 

@@ -1,0 +1,4 @@
+= render 'shared/error_messages', object: f.object
+= f.collection_select :category_id, Category.all, :id, :title, prompt: 'Выберите категорию'
+= f.text_field :title, placeholder: "Название торта"
+= f.text_area :description, placeholder: "Краткое описание"

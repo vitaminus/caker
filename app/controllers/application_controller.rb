@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   include CountriesHelper
   include CitiesHelper
   include AreasHelper
+  include CategoriesHelper
+  include CakesHelper
 
   protected
 

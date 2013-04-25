@@ -1,0 +1,11 @@
+- provide(:title, 'Изменить категорию')
+%p
+  = link_to 'Все категории', categories_path
+%h1 Изменить категорию
+.row-fluid
+  .span6.offset3
+    = form_for(@category) do |f|
+      = render 'fields', f: f
+      %br
+      = f.submit "Изменить категорию", class: "btn btn-large  btn-wide"
+      %br
