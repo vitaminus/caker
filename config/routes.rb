@@ -1,11 +1,17 @@
 Caker::Application.routes.draw do
   
+  get "users/index"
+
+  get "users/show"
+
   resources :manufacturers do
     resources :comments
   end
+
   resources :cakes do
     resources :comments
   end
+
   resources :categories
 
   devise_for :admins
@@ -15,7 +21,9 @@ Caker::Application.routes.draw do
   resources :areas
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout",
                                   sign_up: "registration"}
-
+  resources :users do
+    resources :comments
+  end
   #resources :static_pages
 
   match '/help',    to: 'static_pages#help'

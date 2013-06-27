@@ -31,7 +31,6 @@ class AreasController < ApplicationController
   def update
     if @area.update_attributes(params[:area])
       flash[:success] = "Изменения успешно сохранены!"
-      sign_in @area
       redirect_to @area
     else
       render 'edit'
@@ -41,6 +40,6 @@ class AreasController < ApplicationController
   def destroy
     @area.destroy
     flash[:success] = "Страна успешно удалена"
-    redirect_to area_path
+    redirect_to areas_path
   end
 end

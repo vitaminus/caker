@@ -1,6 +1,7 @@
 jQuery ->
   cities = $('#user_city_id').html()
   areas = $('#user_area_id').html()
+
   $('#user_city_id').hide()
   $('#user_area_id').hide()
   $('#user_country_id').change ->

@@ -40,7 +40,7 @@ class CountriesController < ApplicationController
   def destroy
     @country.destroy
     flash[:success] = "Страна успешно удалена"
-    redirect_to category_path
+    redirect_to countries_path
   end
 
 end

@@ -1,0 +1,10 @@
+= form_for [@commentable, @comment] do |f|
+    = render 'shared/error_messages', object: f.object
+    /= f.label :commenter, "Имя"
+    - if user_signed_in? 
+        = f.text_field :commenter, value: "#{current_user.name}", placeholder: "Имя не более 25 символов", class: "input-xlarge"
+    - else
+        = f.text_field :commenter, placeholder: "Имя не более 25 символов" , class: "input-xlarge"
+    /= f.label :body, "Текст"
+    = f.text_area :body, placeholder: "Текст не более 500 символов", rows: 5
+    = f.submit "Отправить", class: "btn btn-large btn-primary"

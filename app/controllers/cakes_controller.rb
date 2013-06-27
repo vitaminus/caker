@@ -8,6 +8,10 @@ class CakesController < ApplicationController
   end
 
   def show
+    @cake = Cake.find(params[:id])
+    @commentable = @cake
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   def new

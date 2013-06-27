@@ -227,7 +227,7 @@ input[type="submit"].btn-wide {
   @extend .error;
  }
 
- select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+select, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
   border-radius: 3px 3px 3px 3px;
   color: #555555;
   display: inline-block;
@@ -236,6 +236,10 @@ input[type="submit"].btn-wide {
   line-height: 20px;
   margin-bottom: 9px;
   padding: 8px 6px;
+}
+
+textarea {
+  font-size: 20px;
 }
 
 label.inline {
@@ -272,7 +276,4 @@ hr.comment {
   color: #f3f3f3;
   text-decoration: none;
   font-size: 1.3em;
-}
-small{
-  font-size: 60%;
 }

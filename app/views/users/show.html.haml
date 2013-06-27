@@ -1,0 +1,56 @@
+- provide(:title, @user.country.title + " - " + @user.city.title + " - " + @user.area.title + " район - " + @username)
+%h1 
+  = @username
+.row
+  .span3
+    - if @user.avatar?
+      = image_tag(@user.avatar.thumb.url)
+    - else
+      = image_tag("1851.jpg")
+  .span7
+    %p 
+      Страна:
+      %b
+        =@user.country.title
+    %p 
+      Город:
+      %b
+        =@user.city.title
+    %p 
+      Район:
+      %b
+        =@user.area.title
+    %p 
+      -if @user.phone1?
+        Номер телефона:
+        %b
+          =@user.phone1
+    %p
+      -if @user.phone2?
+        Еще номер телефона:
+        %b
+          =@user.phone2?
+.row
+  .span12
+    Здесь будут фотографии тортов с ссылками на сами торты
+.row
+  .span6
+    %h3 
+      Отзывы о производителе 
+      = @user.name
+    - if @comments.count == 0
+      .center
+        %p Еще нет ни одного отзыва. Будь первым!
+    - else
+      = render 'comments/comment'
+    %h3 Оставить отзыв
+    = render 'comments/form'
+  / .span6
+  /   %h3
+  /     Отзывы о тортах прозводителя 
+  /     = @user.name
+  /   - if @comments.count == 0
+  /     .center
+  /       %p Еще нет ни одного отзыва.
+  /   - else
+  /     = render 'comments/comment'

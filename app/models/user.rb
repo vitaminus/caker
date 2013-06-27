@@ -21,6 +21,6 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   validates :country_id, :city_id, :area_id, presence: true
-  validates :username, presence: true, length: {minimum: 5, maximum: 25},
+  validates :username, presence: true, length: {minimum: 4, maximum: 25},
                        uniqueness: {case_sencitive: false, message: "Такой логин уже занят"}
 end

@@ -11,6 +11,6 @@ class City < ActiveRecord::Base
   validates :country_id, presence: true
   validates :title, presence: true
   validates :url_title, presence: true,
-            format: { with: VALID_URL_TITLE, message: "Только английскими буквами" }, 
+            format: { with: VALID_URL_TITLE, message: "Только английскими буквами" },
             uniqueness: true
 end

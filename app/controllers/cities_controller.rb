@@ -40,6 +40,6 @@ class CitiesController < ApplicationController
   def destroy
     @city.destroy
     flash[:success] = "Страна успешно удалена"
-    redirect_to area_path
+    redirect_to cities_path
   end
 end
